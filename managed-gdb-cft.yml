@@ -7,6 +7,7 @@ Description: Creates supporting resources for automated global database endpoint
 #                      - added stackid as a uniquifier for managed policy names
 # 4/23/2022 : ausamant - added ability to choose either planned or unplanned feature support
 # 5/14/2022 : ausamant - now removes clustername entries from all regions ddb table after unplanned failover
+# 10/09/2023 : ausamant - now removes clustername entries from all regions ddb table after unplanned failover
 ######################################################################################################################
 
 ## Parameters
@@ -518,7 +519,7 @@ Resources:
     Condition: condRulePlanned
     #DependsOn: !If [condAll, "gdbmanagedeplambdaall", "gdbmanagedeplambdaplanned"]
     Properties: 
-      Description: Event Bridge rule to track Aurora Global Database failover in this region
+      Description: Event Bridge rule to track Neptune Global Database failover in this region
       EventPattern:
         source: 
           - "aws.rds"
@@ -529,7 +530,7 @@ Resources:
             - "global-failover"
           EventID:
             - "RDS-EVENT-0185"
-      Name: AuroraGDBfailovertracking
+      Name: NeptuneGDBfailovertracking
       Targets: 
       # Find the correct Lambda ARN depeding on if "all" or "planned" features were requested
         - Arn: !If [condAll, !GetAtt gdbmanagedeplambdaall.Arn, !GetAtt gdbmanagedeplambdaplanned.Arn]
@@ -541,7 +542,7 @@ Resources:
     Condition: condRuleUnPlanned
     #DependsOn: !If [condAll, "gdbmanagedeplambdaall", "gdbmanagedeplambdauplanned"]
     Properties: 
-      Description: Event Bridge rule to track Aurora Global Database detach and promote event (unplanned failover)
+      Description: Event Bridge rule to track Neptune Global Database detach and promote event (unplanned failover)
       EventPattern:
         source: 
           - "aws.rds"
@@ -552,7 +553,7 @@ Resources:
             - "configuration change"
           EventID:
             - "RDS-EVENT-0228"
-      Name: AuroraGDBUnplannedfailovertracking
+      Name: NeptuneGDBUnplannedfailovertracking
       Targets: 
       # Find the correct Lambda ARN depeding on if "all" or "unplanned" features were requested
         - Arn: !If [condAll, !GetAtt gdbmanagedeplambdaall.Arn, !GetAtt gdbmanagedeplambdauplanned.Arn]
