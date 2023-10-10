@@ -297,10 +297,6 @@ def main():
     try:
         #Get the inputs for 1\cluster name and writer cname entry for that cluster and 2\name of the private hosted zone.
         parser=argparse.ArgumentParser()
-        #parser.add_argument ("-c", "--cluster-cname-pair", default='{""justin-airdata-cluster-123":"writer.justin-airdata-cluster-123.com""}', type=str, help="Cluster and writer endpoint pair in '{\"cluname\":\"writer\"}' format")
-        #parser.add_argument ("-z","--hosted-zone-name", type=str, default='justin-airdata-cluster-123.com', help="Name of the hosted zone. If one doesn't exist, it will be created")
-        #parser.add_argument ("-r","--region-list", type=str, default='us-east-1,us-east-2', help="List of regions separated by commas, where the stack will be deployed")
-        #parser.add_argument("-sv","--skip-vpc", default=False, action="store_true", help="Skips adding vpcs in the hosted zone, if using an existing hosted zone.")
         parser.add_argument ("-c", "--cluster-cname-pair", type=str, help="Cluster and writer endpoint pair in '{\"cluname\":\"writer\"}' format")
         parser.add_argument ("-z","--hosted-zone-name", type=str, help="Name of the hosted zone. If one doesn't exist, it will be created")
         parser.add_argument ("-r","--region-list", type=str, default='', help="List of regions separated by commas, where the stack will be deployed")
