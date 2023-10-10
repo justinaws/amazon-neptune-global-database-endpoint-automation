@@ -3,7 +3,7 @@ This solution includes a cloudformation template and a python script. This docum
 
 # Architecture
 
-![Screenshot 2023-10-09 at 8 29 04 AM](https://github.com/justinaws/amazon-neptune-global-database-endpoint-automation/assets/147440980/affaba16-0081-4946-95e1-e35578c7c9bf)
+![Architecture](https://github.com/justinaws/amazon-neptune-global-database-endpoint-automation/assets/147440980/da4d0a86-d8e4-4327-9296-57fd33ed740c)
 
 
 # Requirements
