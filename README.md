@@ -1,6 +1,11 @@
 # Automated endpoint management for Amazon Neptune Global Database
 This solution includes a cloudformation template and a python script. This document will describe how to use this solution.
 
+# Architecture
+
+![Screenshot 2023-10-09 at 8 29 04 AM](https://github.com/justinaws/amazon-neptune-global-database-endpoint-automation/assets/147440980/affaba16-0081-4946-95e1-e35578c7c9bf)
+
+
 # Requirements
 AWS CLI already configured with Administrator permission
 Latest version of Python 3
