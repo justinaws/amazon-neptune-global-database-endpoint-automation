@@ -3,7 +3,7 @@ This solution includes a cloudformation template and a python script. This docum
 
 # Architecture
 
-![Architecture](https://github.com/justinaws/amazon-neptune-global-database-endpoint-automation/assets/147440980/05cf9d6b-2111-4b2c-b87e-0e63d8939317)
+![Architecture](https://github.com/justinaws/amazon-neptune-global-database-endpoint-automation/assets/147440980/70dcb257-2956-4317-9a83-4080dab0061e)
 
 # Requirements
 AWS CLI already configured with Administrator permission
