@@ -681,7 +681,8 @@ Resources:
         Statement:
           Effect: Allow
           Action: route53:ChangeResourceRecordSets
-          Resource: "*"
+          Resource:
+           - !Sub "arn:aws:route53:*:${AWS::AccountId}:hostedzone:*"
       ManagedPolicyName: 
         Fn::Join:
           - '-'
